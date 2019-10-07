@@ -172,8 +172,8 @@ report("#A10",classInfo)
         {
         var photoANDscores={};
         photoANDscores.school= penguin.picture;
-photoANDscores.totalGrade=pen.meanQuiz*.2+pen.meanTests*.3+pen.meanHW*.15+pen.finalGrade*.35;
-    return photoANDscores
+        photoANDscores.totalGrade=pen.meanQuiz*.2+pen.meanTests*.3+pen.meanHW*.15+pen.finalGrade*.35;
+    return photoANDscores;
        
 }
       var answer=classInfo.map(pictureANDtotalGrade);  
@@ -194,7 +194,14 @@ photoANDscores.totalGrade=pen.meanQuiz*.2+pen.meanTests*.3+pen.meanHW*.15+pen.fi
 <h3>Write a function to find the average grade of all students on the first quiz.</h3>
     <p>Here is what you should get.=6.217391304347826</p>
 <script>
-var answer="Please Complete";
+var getQuiz1= function(penguin)
+{
+
+    return penguin.quizes[0].grade;
+}
+
+var quiz1Array=classroom.map(getQuiz1);
+var answer= d3.mean(quiz1Array);
 report("#C1",answer)    
 </script>
     </div>
